@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encuesta en Línea</title>
+</head>
+<body>
+    <h1>Encuesta</h1>
+    <form action="encuesta.php" method="GET">
+        <p>¿Cuál es tu estación del año favorita?</p>
+        <input type="radio" id="primavera" name="opcion" value="Primavera" required>
+        <label for="primavera">Primavera</label><br>
+
+        <input type="radio" id="verano" name="opcion" value="Verano">
+        <label for="verano">Verano</label><br>
+
+        <input type="radio" id="otoño" name="opcion" value="Otoño">
+        <label for="otoño">Otoño</label><br>
+
+        <input type="radio" id="invierno" name="opcion" value="Invierno">
+        <label for="invierno">Invierno</label><br><br>
+
+        <input type="submit" value="Votar">
+    </form>
+</body>
+</html>

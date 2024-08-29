@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Votación Simple</title>
+</head>
+<body>
+    <h1>Encuesta de Votación</h1>
+    <form action="votacion.php" method="GET">
+        <p>¿Cuál es tu color favorito?</p>
+        <input type="radio" id="rojo" name="opcion" value="Rojo" required>
+        <label for="rojo">Rojo</label><br>
+
+        <input type="radio" id="azul" name="opcion" value="Azul">
+        <label for="azul">Azul</label><br>
+
+        <input type="radio" id="verde" name="opcion" value="Verde">
+        <label for="verde">Verde</label><br>
+
+        <input type="radio" id="amarillo" name="opcion" value="Amarillo">
+        <label for="amarillo">Amarillo</label><br><br>
+
+        <input type="submit" value="Votar">
+    </form>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<?php
+// Definición de la clase base DispositivoElectronico
+abstract class DispositivoElectronico {
+    // Propiedades comunes
+    protected $marca;
+    protected $modelo;
+
+    // Constructor
+    public function __construct($marca, $modelo) {
+        $this->marca = $marca;
+        $this->modelo = $modelo;
+    }
+
+    // Método para encender el dispositivo (debe ser implementado en las clases derivadas)
+    abstract public function encender();
+
+    // Método para apagar el dispositivo (debe ser implementado en las clases derivadas)
+    abstract public function apagar();
+
+    // Método para cargar el dispositivo (debe ser implementado en las clases derivadas)
+    abstract public function cargar();
+
+    // Método para obtener la marca
+    public function getMarca() {
+        return $this->marca;
+    }
+
+    // Método para obtener el modelo
+    public function getModelo() {
+        return $this->modelo;
+    }
+}
+?>

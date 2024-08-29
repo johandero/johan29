@@ -1,0 +1,1 @@
+{"Verano":1,"Invierno":1,"Primavera":1}

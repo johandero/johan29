@@ -1,0 +1,33 @@
+<?php
+// Definición de la clase Smartphone
+class Smartphone extends DispositivoElectronico {
+    // Propiedad específica
+    private $numeroLinea;
+
+    // Constructor
+    public function __construct($marca, $modelo, $numeroLinea) {
+        parent::__construct($marca, $modelo);
+        $this->numeroLinea = $numeroLinea;
+    }
+
+    // Implementación del método para encender el smartphone
+    public function encender() {
+        return "El smartphone está encendido.";
+    }
+
+    // Implementación del método para apagar el smartphone
+    public function apagar() {
+        return "El smartphone está apagado.";
+    }
+
+    // Implementación del método para cargar el smartphone
+    public function cargar() {
+        return "El smartphone está cargando.";
+    }
+
+    // Método para obtener el número de línea
+    public function getNumeroLinea() {
+        return $this->numeroLinea;
+    }
+}
+?>

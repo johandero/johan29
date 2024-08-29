@@ -1,0 +1,33 @@
+<?php
+// Definición de la clase Laptop
+class Laptop extends DispositivoElectronico {
+    // Propiedad específica
+    private $capacidadBateria;
+
+    // Constructor
+    public function __construct($marca, $modelo, $capacidadBateria) {
+        parent::__construct($marca, $modelo);
+        $this->capacidadBateria = $capacidadBateria;
+    }
+
+    // Implementación del método para encender la laptop
+    public function encender() {
+        return "La laptop está encendida.";
+    }
+
+    // Implementación del método para apagar la laptop
+    public function apagar() {
+        return "La laptop está apagada.";
+    }
+
+    // Implementación del método para cargar la laptop
+    public function cargar() {
+        return "La laptop está cargando.";
+    }
+
+    // Método para obtener la capacidad de la batería
+    public function getCapacidadBateria() {
+        return $this->capacidadBateria;
+    }
+}
+?>

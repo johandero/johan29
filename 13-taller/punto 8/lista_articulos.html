@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listado de Artículos</title>
+    <style>
+        /* Estilos para el cuerpo del documento */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        
+        /* Estilos para el encabezado principal */
+        h1 {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            text-align: center;
+            margin: 0;
+        }
+        
+        /* Estilos para el contenedor de los artículos */
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Estilos para la lista de artículos */
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        /* Estilos para los elementos de la lista */
+        li {
+            background: #fff;
+            margin: 5px 0;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Estilos para los enlaces en la lista */
+        a {
+            text-decoration: none;
+            color: #333;
+        }
+        
+        /* Estilos para el efecto hover en los enlaces */
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Listado de Artículos</h1>
+    <div class="container">
+        <?php
+        session_start();
+        
+        // Verificar si existe la variable de sesión 'articulos'
+        if (isset($_SESSION['articulos']) && !empty($_SESSION['articulos'])) {
+            $articulos = $_SESSION['articulos'];
+            echo "<ul>";
+            
+            foreach ($articulos as $articulo) {
+                // Asegurarse de que el artículo tenga los campos necesarios
+                if (isset($articulo['id'], $articulo['titulo'], $articulo['precio'])) {
+                    echo "<li>
+                            <a href='detalle_articulo.php?id={$articulo['id']}'>{$articulo['titulo']}</a> - \${$articulo['precio']}
+                          </li>";
+                } else {
+                    echo "<li>Artículo con información incompleta.</li>";
+                }
+            }
+            
+            echo "</ul>";
+        } else {
+            echo "<p>No se han encontrado artículos.</p>";
+        }
+        ?>
+    </div>
+</body>
+</html>

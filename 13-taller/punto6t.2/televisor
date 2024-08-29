@@ -1,0 +1,33 @@
+<?php
+// Definición de la clase Televisor
+class Televisor extends DispositivoElectronico {
+    // Propiedad específica
+    private $tamanoPantalla;
+
+    // Constructor
+    public function __construct($marca, $modelo, $tamanoPantalla) {
+        parent::__construct($marca, $modelo);
+        $this->tamanoPantalla = $tamanoPantalla;
+    }
+
+    // Implementación del método para encender el televisor
+    public function encender() {
+        return "El televisor está encendido.";
+    }
+
+    // Implementación del método para apagar el televisor
+    public function apagar() {
+        return "El televisor está apagado.";
+    }
+
+    // Implementación del método para cargar el televisor
+    public function cargar() {
+        return "El televisor no necesita carga.";
+    }
+
+    // Método para obtener el tamaño de la pantalla
+    public function getTamanoPantalla() {
+        return $this->tamanoPantalla;
+    }
+}
+?>
